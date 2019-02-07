@@ -38,15 +38,15 @@ class LoginScreen extends StatelessWidget{
 
   Widget passwordField(){
    return new StreamBuilder(
-     stream: loginBloc.password,
-     builder: (context, snapshot){
+     stream: loginBloc.password, //pasamos el transformer
+     builder: (context, snapshot){ //trabajamos con el builder
        return TextField(
-          onChanged: loginBloc.changePassword,
+          onChanged: loginBloc.changePassword, //entra a la validacion
           obscureText: true, //es para que no se vea la clave
           decoration: InputDecoration(
           hintText: "Input your password",
           labelText: "Password",
-          errorText: snapshot.error
+          errorText: snapshot.error //si existe un error en el Stream
         ),
       );
      },
@@ -56,6 +56,7 @@ class LoginScreen extends StatelessWidget{
   }
 
   Widget submitButtom(){
+    
     return RaisedButton(
       child: Text("Login",
         style: TextStyle(color: Colors.white),
