@@ -5,7 +5,6 @@ import 'package:rxdart/rxdart.dart';
 class LoginBloc with  LoginValidator{ //vamos a implementar un mixin con validator
   //vamos a cambiar esta linia final _emailController = StreamController<String>.broadcast(); //con el "_" se identifica que una propiedad es privada
   final _email = BehaviorSubject<String>();
-  final _passwordController = StreamController<String>.broadcast();
   final _password = BehaviorSubject<String>(); //es es lo mismo que un treamController<String>.broadcast(); pero de rxdart
 
   //sets para controllers para agregar datos al stream
